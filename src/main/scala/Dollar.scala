@@ -1,12 +1,15 @@
 /** Dollar.scala */
 
-case class Dollar(toInt: Int) {
+case class Dollar(toInt: Int) extends Money {
   val currency = "USD"
   def times(multiplier: Int) = {
     Dollar(toInt * multiplier)
   }
   def equals(that: Dollar) = {
     toInt == that.toInt
+  }
+  def equals(that: Money) = {
+    false
   }
 }
 
